@@ -11,7 +11,7 @@
 | zsRE (Levy et al., 2017), MEND evaluation split (Mitchell et al., 2022) | QA facts, rephrasings, NQ locality questions | MEND code: MIT. **Data terms to be confirmed with the zsRE authors before redistribution** | Release blocker until confirmed (ROADMAP M1) |
 | RWKU (Jin et al., 2024) | Entity track probes, MMLU / TriviaQA utility subsets | CC BY 4.0 (jinzhuoran/RWKU) | MMLU and TriviaQA items are RWKU's own subsets; their upstream terms also apply |
 | `data/wikidata` fixture (this repository) | Perplexity texts | This repository | 200 encyclopedia-style sentences |
-| Relation templates, cross-lingual questions, refusal patterns | Probe generation | Apache-2.0 (this repository) | Author-written. Native-speaker verification is planned (ROADMAP M3) |
+| Relation templates, cross-lingual questions, refusal patterns | Probe generation | Apache-2.0 (this repository) | Author-written. Native-speaker verification is planned |
 
 ## Models
 

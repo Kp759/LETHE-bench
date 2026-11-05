@@ -22,7 +22,7 @@ The gate (`redteam.cheat_gate`) requires **max(LETHE, LETHE_core) < 35** for eve
 ## 2. Verifier reliability (broken verifiers)
 
 - The primary scorer is **teacher-forced exact top-1 on every answer token**: deterministic, with no judge. This is the MQuAKE / MultiFactPerson convention.
-- The generation scorer is rule-based and deterministic. An LLM judge is optional and never used for headline numbers. Planned: a human-labelled calibration set of 1,000 generations (leak / refusal / hallucination) to measure the rule grader's agreement. This needs expert annotation (`ROADMAP.md`, M3).
+- The generation scorer is rule-based and deterministic. An LLM judge is optional and never used for headline numbers. Planned: a human-labelled calibration set of 1,000 generations (leak / refusal / hallucination) to measure the rule grader's agreement. This needs expert annotation.
 - Both scorers are reported side by side, so disagreements between them are visible.
 
 ## 3. Task specification and solvability (ambiguous instructions)
@@ -30,7 +30,7 @@ The gate (`redteam.cheat_gate`) requires **max(LETHE, LETHE_core) < 35** for eve
 - Every probe is answered correctly by the base model (the knowledge filter). The ideal score (E = 100 and L = 100) is therefore achievable *in principle*: the genie upper bound in this repository shows it on the legacy families.
 - Label conflicts are removed by construction (§4.3 of the spec), and `validate_split` re-checks them on every split.
 - `in_context` uses a **counterfactual** note, so "answer from the note" is unambiguous whatever a deployer's policy on reading forgotten facts.
-- Known ambiguity: `indirect` descriptions can be inferable from correlated retained facts (born in France → speaks French). The mitigation is that description facts come from different answer groups than the asked relation. Planned: expert-written descriptions (ROADMAP M3).
+- Known ambiguity: `indirect` descriptions can be inferable from correlated retained facts (born in France → speaks French). The mitigation is that description facts come from different answer groups than the asked relation. Planned: expert-written descriptions.
 
 ## 4. Contamination and leakage
 
@@ -44,7 +44,7 @@ The gate (`redteam.cheat_gate`) requires **max(LETHE, LETHE_core) < 35** for eve
 - **Sources:** four (MultiCounterFact, MQuAKE, zsRE, RWKU), merged on normalized (subject, relation, object) into a 38,086-fact pool; 20 families (11 forget, 9 retain) in three formats (cloze, QA, chat) and four languages (English plus French, Spanish, German probes).
 - **Per seed, a different forget sample** (seeded), so five seeds cover different subjects and relations; the hidden partition holds another 45% of subjects.
 - **Model-conditioned splits:** the knowledge filter makes each model's split its own sample of known facts, and the manifest records the yield per family so thin families are visible (`manifest.knowledge_filter_yield`; families under 5 probes are excluded from aggregates and flagged).
-- **Known limits:** relation templates and cross-lingual questions are author-written; three probe languages; `indirect` yields about 2 probes per seed on Llama-3.2-3B and is excluded from E. The expert-data milestone (ROADMAP M3: 10 languages, expert-written indirect references for 2,000 subjects) exists to widen exactly these.
+- **Known limits:** relation templates and cross-lingual questions are author-written; three probe languages; `indirect` yields about 2 probes per seed on Llama-3.2-3B and is excluded from E. Planned expert data (10 languages, expert-written indirect references for 2,000 subjects) exists to widen exactly these.
 
 ## 6. Difficulty, saturation and stale task sets
 

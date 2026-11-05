@@ -12,7 +12,7 @@ Per relation:
 
 The verb phrases of person relations follow scripts/multifact_person_data.py (the
 MultiFactPerson builder) so the two stay comparable. The cross-lingual questions are
-author-written and are listed in ROADMAP.md for native-speaker verification.
+author-written and await native-speaker verification.
 """
 from __future__ import annotations
 

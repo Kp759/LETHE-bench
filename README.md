@@ -12,7 +12,6 @@ LETHE-Bench (**L**ocality and **E**rasure under **T**ampering and **H**eld-out *
 | [`AGENT_TRACK.md`](AGENT_TRACK.md) | Agentic leakage track (prototype): the unlearned model as a search agent |
 | [`scripts/README_CLUSTER.md`](scripts/README_CLUSTER.md) · [`scripts/aws/README.md`](scripts/aws/README.md) | Running every method: Wulver (SLURM) or one AWS GPU |
 | [`DATA_LICENSE.md`](DATA_LICENSE.md) | Data licensing and attribution |
-| [`ROADMAP.md`](ROADMAP.md) | Status, milestones, resource needs, risks |
 | [`results/`](results/) | Cluster leaderboards for the three models (`results/cluster/`) |
 
 ## Headline results: three models, 5 seeds each
