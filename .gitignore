@@ -1,0 +1,16 @@
+# data and model caches
+data_cache/
+tests/.cache/
+results/**/cache/
+results/**/model/
+results/**/*.incomplete_*/
+results/aws/logs/
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+# os / editors
+.DS_Store
